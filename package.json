@@ -1,18 +1,18 @@
 {
   "name": "nostradavid-better-comments",
   "displayName": "Better Comments by NostraDavid",
-  "version": "1.0.10",
-  "description": "Comment highlighting that distinguishes Python comments from strings. Existing better-comments.* settings remain supported.",
+  "version": "1.0.11",
+  "description": "Highlight comment tags with configurable styles, with string-aware detection for Python and JavaScript/TypeScript.",
   "categories": [
     "Formatters"
   ],
-  "homepage": "https://github.com/NostraDavid/better-comments#readme",
+  "homepage": "https://github.com/NostraDavid/vscode-better-comments#readme",
   "bugs": {
-    "url": "https://github.com/NostraDavid/better-comments/issues"
+    "url": "https://github.com/NostraDavid/vscode-better-comments/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/NostraDavid/better-comments.git"
+    "url": "https://github.com/NostraDavid/vscode-better-comments.git"
   },
   "license": "MIT",
   "author": "NostraDavid",
@@ -137,7 +137,7 @@
   ],
   "overrides": {
     "@vscode/vsce": {
-      "@azure/identity": "4.13.0",
+      "@azure/identity": "4.14.1",
       "uuid": "11.1.1"
     }
   },
@@ -149,10 +149,10 @@
   "devDependencies": {
     "@types/node": "24.19.2",
     "@types/vscode": "1.100.0",
-    "@vscode/vsce": "4.0.0",
-    "typescript": "5.9.3",
+    "@vscode/vsce": "4.1.0",
+    "typescript": "7.0.2",
     "webpack": "5.112.2",
-    "webpack-cli": "7.2.3"
+    "webpack-cli": "7.3.1"
   },
   "engines": {
     "vscode": "^1.100.0"
@@ -164,7 +164,6 @@
       "onFail": "error"
     }
   },
-  "icon": "icon.png",
   "galleryBanner": {
     "color": "#e3f4ff",
     "theme": "light"
@@ -172,8 +171,5 @@
   "extensionKind": [
     "ui",
     "workspace"
-  ],
-  "sponsor": {
-    "url": "https://github.com/sponsors/aaron-bond"
-  }
+  ]
 }

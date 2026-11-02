@@ -8,7 +8,6 @@
 !/test/
 !/src/
 !/syntaxes/
-!/images/
 !/resources/
 
 !/.editorconfig
@@ -36,7 +35,6 @@
 !/tsconfig.json
 !/tsconfig.runtime.json
 !/webpack.config.mts
-!/icon.png
 
 node_modules/
 dist/

@@ -2,7 +2,7 @@
 
 ## Use the extension
 
-1. Download the VSIX from [the releases page](https://github.com/NostraDavid/better-comments/releases).
+1. Download the VSIX from [the releases page](https://github.com/NostraDavid/vscode-better-comments/releases).
 2. Open VS Code and select the Extensions view.
 3. Open the three-dot menu, select **Install from VSIX**, and select the downloaded file.
 4. Disable the original Better Comments extension. In a Python file, a real `# !` comment is colored while `"#! inside a string"` is left as a string.

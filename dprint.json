@@ -16,7 +16,6 @@
     "out/**",
     "package-lock.json",
     "test/fixtures/**",
-    "docs/upstream-README.md",
     "docs/upstream-CHANGELOG.md"
   ],
   "plugins": [

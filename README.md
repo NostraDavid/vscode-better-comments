@@ -1,28 +1,37 @@
 # Better Comments by NostraDavid
 
-Comment highlighting that distinguishes Python comments from strings. Existing better-comments.* settings remain supported.
+Highlight tags in code comments so alerts, questions, TODOs, and other notes are easy to scan. The extension keeps the existing `better-comments.*` settings and includes string-aware comment detection for Python and JavaScript/TypeScript, including JSX and TSX.
 
-A maintained fork of [aaron-bond/better-comments](https://github.com/aaron-bond/better-comments). Original authorship and license notices are preserved. This fork starts at **1.0.0**.
+This is a maintained fork of [Better Comments by Aaron Bond](https://github.com/aaron-bond/better-comments). It preserves the original MIT license and copyright notice; see [LICENSE.md](LICENSE.md). The fork uses its own release sequence, starting at 1.0.0.
 
 ## Install
 
-Download `nostradavid-better-comments-1.0.0.vsix` from [GitHub Releases](https://github.com/NostraDavid/better-comments/releases). In VS Code, open Extensions, choose **Install from VSIX**, and select that file.
+Download the VSIX for the release you want from [GitHub Releases](https://github.com/NostraDavid/vscode-better-comments/releases). In VS Code, open **Extensions**, select the **More Actions** menu, choose **Install from VSIX...**, and select the downloaded file.
 
-Disable `aaron-bond.better-comments` before enabling this fork to avoid duplicate decorations. Existing `better-comments.*` settings keep their names.
+If the original Better Comments extension is also installed, disable it to avoid duplicate decorations. Existing `better-comments.*` settings keep their names.
 
-See [the beginner guide](docs/getting-started.md), [contribution guide](CONTRIBUTING.md), [changelog](CHANGELOG.md), and [release guide](docs/releasing.md).
+## Configure
 
-## Development
+The extension reads settings from VS Code user or workspace settings. Its settings include:
 
-Install Nix, enter `nix develop`, then run `just setup` and `just check`. Run `just package` to build a VSIX. The flake supports x86_64/aarch64 Linux and macOS, including Intel macOS through the pinned Nixpkgs revision.
+- `better-comments.tags` — the tags and styles to apply. Each entry has a `tag` and can set `color`, `backgroundColor`, `strikethrough`, `underline`, `bold`, or `italic`.
+- `better-comments.multilineComments` — whether tags are highlighted in multiline comments (default: `true`).
+- `better-comments.highlightPlainText` — whether tags at the start of plaintext lines are highlighted (default: `false`).
+- `better-comments.enabled` — enables or disables highlighting, including per-language overrides.
 
-Dependency upgrades are explicit: `just lock-upgrade` and `just update-nix`. Normal setup uses the committed locks.
+For example, add or edit tag entries in `settings.json`:
 
-Tag and color changes apply immediately to all visible editors. Closing an editor or disabling the extension clears its decorations and pending updates.
+```json
+{
+  "better-comments.tags": [
+    { "tag": "!", "color": "#FF2D00", "bold": true },
+    { "tag": "todo", "color": "#FF8C00" },
+    { "tag": "?", "color": "#3498DB" }
+  ]
+}
+```
 
-When tags overlap, the first longest matching tag chooses the style. Case-insensitive duplicate definitions retain the first configured style.
-
-To disable highlighting for one language, use VS Code's native language settings:
+To disable highlighting for Python only, use VS Code's language-specific settings:
 
 ```json
 "[python]": {
@@ -30,4 +39,14 @@ To disable highlighting for one language, use VS Code's native language settings
 }
 ```
 
-Changing a document's language applies its settings and removes old decorations immediately.
+Tag and style changes apply immediately. When tags overlap, the first longest matching tag selects the style.
+
+## Development
+
+See [Getting started](docs/getting-started.md) and [Contributing](CONTRIBUTING.md). The project uses a locked Node.js 24 development environment; run `nix develop`, `just setup`, and `just check`. Use `just package` to build a local VSIX.
+
+See the [changelog](CHANGELOG.md) for fork releases and the [upstream changelog archive](docs/upstream-CHANGELOG.md) for historical upstream notes.
+
+## Attribution and license
+
+This fork is based on Aaron Bond's [Better Comments](https://github.com/aaron-bond/better-comments). The original copyright and MIT permission notice are retained in [LICENSE.md](LICENSE.md).

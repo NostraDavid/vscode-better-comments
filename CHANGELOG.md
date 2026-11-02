@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+## [1.0.11] - 2026-11-01
+
+### Changed
+
+- Point project metadata and download links at the renamed GitHub repository.
+- Replace the inherited README with fork-specific usage, compatibility and attribution information.
+- Remove the archived upstream README, icon, unused screenshot, and sponsor metadata; preserve the MIT notice.
+
 ## [1.0.10] - 2026-10-25
 
 ### Changed
