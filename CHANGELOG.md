@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Reuse compatible development tools from PATH and fall back to the locked Nix packages.
+
 ## [1.0.11] - 2026-11-01
 
 ### Changed
